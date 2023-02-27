@@ -3,13 +3,18 @@ const formInputEl = document.querySelector('#validation-input');
 
 
 formInputEl.addEventListener('blur', (event) => {
+        const valueLength = event.target.value.trim();
+        console.log(valueLength.length);
+        const dataLength = formInputEl.getAttribute('data-length');  
 
-    if (event.target.value.length === formInputEl.getAttribute('data-length')) {
-        event.currentTarget.classList.add('valid');
-        event.currentTarget.classList.remove("invalid")
+    if (valueLength.length == dataLength) {
+        formInputEl.classList.add('valid')
+        formInputEl.classList.remove('invalid')
     }
     else {
-        event.currentTarget.classList.remove("valid");
-        event.currentTarget.classList.add("invalid");
-      }
+        formInputEl.classList.add('invalid')
+        formInputEl.classList.remove('valid')
+    }
 });
+
+
