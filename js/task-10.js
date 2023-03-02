@@ -33,4 +33,5 @@ const deletesBox = () => {
 
 dataDestroy.addEventListener('click', () => {
   boxEl.innerHTML = '';
+  inputEl.value = '';
 });
