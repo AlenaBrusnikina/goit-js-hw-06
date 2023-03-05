@@ -13,16 +13,24 @@ const images = [
   },
 ];
 
-const listEl = document.querySelector('.gallery');
+const listEl = document.querySelector('.gallery'); //! Пошук списку
 
+//! Стилізація через JS
 listEl.style.display = 'flex';
 listEl.style.flexWrap = 'wrap';
 listEl.style.listStyle = 'none';
 listEl.style.gap = '20px';
 
+
+//! Перебираємо масив об'єктів.
+//! На кожній ітерації створюємо елемент списку з фотографією.
+//! Беремо данні з масиву об'єктів: посилання + альтернативний текст.
 const imgEl = images
   .map(el => `<li><img src="${el.url}" alt="${el.alt}" height="350" width="650"></img></li>`)
-  .join(' ');
+  .join(' '); //! Прибираємо кому після кожного фото, додаючи пустий символ ""
 
+
+
+//! Додавання до розмітки наших елементів списку з фото
 listEl.insertAdjacentHTML('afterbegin', imgEl);
 console.log(imgEl);
